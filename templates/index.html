@@ -12,37 +12,175 @@
 
     <title>Vicky COVID19 TRACKER</title>
   </head>
+  <style>
+
+  </style>
   <body>
-    <h1>Hello, world!</h1>
+    
+    
+    <!-- ......................Nav bar.................  -->
+    <div>
+    <header class="text-gray-600 body-font">
+      <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+        <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full" viewBox="0 0 24 24" >
+            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 hj5 10-5"></path>
+          </svg>
+          <span class="ml-3 text-xl">Vicky AI Production</span>
+        </a>
+        
+      </div>
+    </header>
 
 
+    <!-- .........................................  -->
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+      <strong>COVID19 SITUATION IN PAKISTAN FROM JANUARY 2021</strong> The data has been taken from <a href="https://github.com/CSSEGISandData/COVID-19" style="padding-top:4px;padding-bottom:12px" ping="/url?sa=t&source=web&rct=j&url=https://github.com/CSSEGISandData/COVID-19&ved=2ahUKEwi2sIGV_rLwAhVNasAKHTo2DKUQ7OUFMAF6BAhCEAM" target="_blank" rel="noopener">JHU CSSE COVID-19 Data</a>
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <!-- ..............  -->
+    <form action="{{ url_for('refresh')}}" method="post">
+
+      <div class="alert alert-success" role="alert">
+        <h4 class="alert-heading">Wellcome</h4>
+      <p >{{ df_date }}</p>
+      <hr>
+      <p class="mb-0">Please press refresh button to see any further update</p>
+      <button class="flex mx-auto mt-6 text-white bg-indigo-500 border-0 py-2 px-5 focus:outline-none hover:bg-indigo-600 rounded">Refresh</button>
+    </div>
+    <!-- .............  -->
     <section class="text-gray-600 body-font">
-        <div class="container px-5 py-24 mx-auto">
-          <div class="flex flex-wrap -mx-4 -mb-10 text-center">
-            <div class="sm:w-1/2 mb-10 px-4">
-              <div class="rounded-lg h-64 overflow-hidden">
-                <img alt="content" class="object-cover object-center h-full w-full" src="static/figures/COVID19 Cases BY PROVOINCE FROM 2021.png">
-              </div>
-              <h2 class="title-font text-2xl font-medium text-gray-900 mt-6 mb-3">Buy YouTube Videos</h2>
-              <p class="leading-relaxed text-base">Williamsburg occupy sustainable snackwave gochujang. Pinterest cornhole brunch, slow-carb neutra irony.</p>
-              <button class="flex mx-auto mt-6 text-white bg-indigo-500 border-0 py-2 px-5 focus:outline-none hover:bg-indigo-600 rounded">Button</button>
+      <div class="container px-5 py-18 mx-auto flex flex-col">
+        <div class="lg:w-4/10 mx-auto">
+          <div class="rounded-lg h-100 overflow-hidden">
+            <img alt="content" class="object-cover object-center h-full w-full" src="../static/figures/COVID19 Cases IN PAKISTAN FROM 2021.png">
+          </div>
+          
+        </div>
+      </div>
+    </section>
+    <section class="text-gray-600 body-font">
+      <div class="container px-5 py-18 mx-auto flex flex-col">
+        <div class="lg:w-4/10 mx-auto">
+          <div class="rounded-lg h-100 overflow-hidden">
+            <img alt="content" class="object-cover object-center h-full w-full" src="../static/figures/COVID19 Deaths IN PAKISTAN FROM 2021.png">
+          </div>
+          
+        </div>
+      </div>
+    </section>
+    <section class="text-gray-600 body-font">
+      <div class="container px-5 py-18 mx-auto flex flex-col">
+        <div class="lg:w-4/10 mx-auto">
+          <div class="rounded-lg h-100 overflow-hidden">
+            <img alt="content" class="object-cover object-center h-full w-full" src="../static/figures/COVID19 Recoveries IN PAKISTAN FROM 2021.png">
+          </div>
+          
+        </div>
+      </div>
+    </section>
+    <section class="text-gray-600 body-font">
+      <div class="container px-5 py-18 mx-auto flex flex-col">
+        <div class="lg:w-4/10 mx-auto">
+          <div class="rounded-lg h-100 overflow-hidden">
+            <img alt="content" class="object-cover object-center h-full w-full" src="../static/figures/COVID19 Cases BY PROVOINCE FROM 2021.png">
+          </div>
+          
+        </div>
+      </div>
+    </section>
+    <section class="text-gray-600 body-font">
+      <div class="container px-5 py-18 mx-auto flex flex-col">
+        <div class="lg:w-4/10 mx-auto">
+          <div class="rounded-lg h-100 overflow-hidden">
+            <img alt="content" class="object-cover object-center h-full w-full" src="../static/figures/COVID19 DEATHS BY PROVOINCE FROM 2021.png">
+          </div>
+          
+        </div>
+      </div>
+    </section>
+    <section class="text-gray-600 body-font">
+      <div class="container px-5 py-18 mx-auto flex flex-col">
+        <div class="lg:w-4/10 mx-auto">
+          <div class="rounded-lg h-100 overflow-hidden">
+            <img alt="content" class="object-cover object-center h-full w-full" src="../static/figures/COVID19 Recoveries BY PROVOINCE FROM 2021.png">
+          </div>
+          
+        </div>
+      </div>
+    </section>
+    
+    
+    <section class="text-gray-600 body-font">
+      <div class="container px-5 py-24 mx-auto">
+        <div class="flex flex-wrap -mx-4 -mb-10 text-center">
+          <div class="sm:w-1/2 mb-10 px-4">
+            <div class="rounded-lg h-100 overflow-hidden">
+              <img alt="content" class="object-cover object-center h-full w-full" src="../static/figures/Total Corronavirus Cases by Province.png">
+            </div>
+              <!-- <h2 class="title-font text-2xl font-medium text-gray-900 mt-6 mb-3">Buy YouTube Videos</h2>
+              <p class="leading-relaxed text-base">Williamsburg occupy sustainable snackwave gochujang. Pinterest cornhole brunch, slow-carb neutra irony.</p> -->
+              <button class="flex mx-auto mt-6 text-white bg-indigo-500 border-0 py-2 px-5 focus:outline-none hover:bg-indigo-600 rounded">Refresh</button>
             </div>
             <div class="sm:w-1/2 mb-10 px-4">
-              <div class="rounded-lg h-64 overflow-hidden">
-                <img alt="content" class="object-cover object-center h-full w-full" src="https://dummyimage.com/1202x502">
+              <div class="rounded-lg h-100 overflow-hidden">
+                <img alt="content" class="object-cover object-center h-full w-full" src="../static/figures/Total Corronavirus Deaths by Province.png">
               </div>
-              <h2 class="title-font text-2xl font-medium text-gray-900 mt-6 mb-3">The Catalyzer</h2>
-              <p class="leading-relaxed text-base">Williamsburg occupy sustainable snackwave gochujang. Pinterest cornhole brunch, slow-carb neutra irony.</p>
-              <button class="flex mx-auto mt-6 text-white bg-indigo-500 border-0 py-2 px-5 focus:outline-none hover:bg-indigo-600 rounded">Button</button>
+              <!-- <h2 class="title-font text-2xl font-medium text-gray-900 mt-6 mb-3">The Catalyzer</h2>
+              <p class="leading-relaxed text-base">Williamsburg occupy sustainable snackwave gochujang. Pinterest cornhole brunch, slow-carb neutra irony.</p> -->
+              <button class="flex mx-auto mt-6 text-white bg-indigo-500 border-0 py-2 px-5 focus:outline-none hover:bg-indigo-600 rounded">Refresh</button>
             </div>
           </div>
         </div>
       </section>
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+      <!-- .........  -->
+      <section class="text-gray-600 body-font">
+        <div class="container px-5 py-24 mx-auto">
+          <div class="flex flex-wrap -mx-4 -mb-10 text-center">
+            <div class="sm:w-1/2 mb-10 px-4">
+              <div class="rounded-lg h-100 overflow-hidden">
+                <img alt="content" class="object-cover object-center h-full w-full" src="../static/figures/Total Corronavirus Cases by Province.png">
+              </div>
+                <!-- <h2 class="title-font text-2xl font-medium text-gray-900 mt-6 mb-3">Buy YouTube Videos</h2>
+                <p class="leading-relaxed text-base">Williamsburg occupy sustainable snackwave gochujang. Pinterest cornhole brunch, slow-carb neutra irony.</p> -->
+                <button class="flex mx-auto mt-6 text-white bg-indigo-500 border-0 py-2 px-5 focus:outline-none hover:bg-indigo-600 rounded">Refresh</button>
+              </div>
+              <div class="sm:w-1/2 mb-10 px-4">
+                <div class="rounded-lg h-100 overflow-hidden">
+                  <img alt="content" class="object-cover object-center h-full w-full" src="../static/figures/ratio_between_deaths_and_recoveries.png">
+                </div>
+                <!-- <h2 class="title-font text-2xl font-medium text-gray-900 mt-6 mb-3">The Catalyzer</h2>
+                <p class="leading-relaxed text-base">Williamsburg occupy sustainable snackwave gochujang. Pinterest cornhole brunch, slow-carb neutra irony.</p> -->
+                <button class="flex mx-auto mt-6 text-white bg-indigo-500 border-0 py-2 px-5 focus:outline-none hover:bg-indigo-600 rounded">Refresh</button>
+              </div>
+            </div>
+          </div>
+        </section>
+      <!-- ....new .......  -->
+      <!-- <section class="text-gray-600 body-font container" >
+        <div class="container px-5 py-24 mx-auto">
+          <div class="flex flex-wrap -mx-4 -mb-10 text-center">
+            <div class="sm:w-1/2 mb-10 px-4">
+              <div class="rounded-lg h-100 overflow-hidden">
+                <img alt="content" class="object-cover object-center h-full w-full" src="../static/figures/Total Corronavirus Cases by Province.png">
+              </div>
+              <h2 class="title-font text-2xl font-medium text-gray-900 mt-6 mb-3">Buy YouTube Videos</h2>
+              <p class="leading-relaxed text-base">Williamsburg occupy sustainable snackwave gochujang. Pinterest cornhole brunch, slow-carb neutra irony.</p>
+              <button class="flex mx-auto mt-6 text-white bg-indigo-500 border-0 py-2 px-5 focus:outline-none hover:bg-indigo-600 rounded">Refresh</button>
+            </div>
+            
+          </div>
+        </div>
+      </section> -->
+    
+    </form>
+      
+      <!-- Optional JavaScript -->
+      <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   </body>
-</html>
+  </html>

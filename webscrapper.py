@@ -17,7 +17,6 @@ class scrap_data:
         for item in result:
             if ('.csv' in item and '2021' in item) and (item not in file_lst):
                 csv_files.append(item)
-            
                 with open('csv_files.txt','a+') as f:
                     f.write(item+' ')
         return csv_files
