@@ -24,7 +24,6 @@ class COVID19_TRACKER:
         self.process_data_obj.derive_colum('Deaths in a day','Deaths',df1)
         self.process_data_obj.derive_colum('Recovered in a day','Recovered',df1)
         self.process_data_obj.remove_null_columns(df1)
-        df1=self.process_data_obj.remove_latest_date_in_Last_Update_Column_if_found_zero(df1)
         
         total_cases_by_province_lst,sum=self.process_data_obj.province_info('Cases in a day',df1)
         total_deaths_by_province_lst,death_sum=self.process_data_obj.province_info('Deaths in a day',df1)

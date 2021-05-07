@@ -40,12 +40,17 @@ def refresh():
         if request.method=='POST':
             COVID19_TRACKERobj=COVID19_TRACKER()
             df=COVID19_TRACKERobj.tracker()
-            str_date=str(df['Last_Update'][0])[0:10]
-            with open('logs/date.cache','w') as f:
-                f.write(str_date)
+            # str_date=str(df['Last_Update'][0])[0:10]
+            # with open('logs/date.cache','w') as f:
+            #     f.write(str_date)
+            file_lst=['']
+            if 'csv_files.txt' in os.listdir(os.getcwd()):
+                with open('csv_files.txt','r') as r:
+                    file_lst=r.read().split(' ')
 
-            return render_template('index.html',df_date='You are seeing the COVID19 situation in Pakistan till date: '+str_date)
+            return render_template('index.html',df_date='You are seeing the COVID19 situation in Pakistan till date: '+file_lst[-2])
     except Exception as e:
+        raise e
         return 'Unknown Error occured: '+str(e)
 
 if __name__ == '__main__':
