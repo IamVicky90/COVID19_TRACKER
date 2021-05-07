@@ -46,7 +46,7 @@ def refresh():
 
             return render_template('index.html',df_date='You are seeing the COVID19 situation in Pakistan till date: '+str_date)
     except Exception as e:
-        print('Unknown Error occured: ',str(e))
+        return 'Unknown Error occured: '+str(e)
 
 if __name__ == '__main__':
     app.run(host="0.0.0.0",port="5000")
