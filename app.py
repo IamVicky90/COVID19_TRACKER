@@ -37,14 +37,14 @@ def home():
 @app.route('/refresh', methods=['GET', 'POST'])
 def refresh():
     try:
-    if request.method=='POST':
-        COVID19_TRACKERobj=COVID19_TRACKER()
-        df=COVID19_TRACKERobj.tracker()
-        str_date=str(df['Last_Update'][0])[0:10]
-        with open('logs/date.cache','w') as f:
-            f.write(str_date)
+        if request.method=='POST':
+            COVID19_TRACKERobj=COVID19_TRACKER()
+            df=COVID19_TRACKERobj.tracker()
+            str_date=str(df['Last_Update'][0])[0:10]
+            with open('logs/date.cache','w') as f:
+                f.write(str_date)
 
-        return render_template('index.html',df_date='You are seeing the COVID19 situation in Pakistan till date: '+str_date)
+            return render_template('index.html',df_date='You are seeing the COVID19 situation in Pakistan till date: '+str_date)
     except Exception as e:
         print('Unknown Error occured: ',str(e))
 
