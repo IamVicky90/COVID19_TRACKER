@@ -8,6 +8,12 @@ def create_logs_folder_if_not_exist():
         os.mkdir('logs')
 app = Flask(__name__)
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
+def get_file_lst():
+    file_lst=['']
+    if 'csv_files.txt' in os.listdir(os.getcwd()):
+        with open('csv_files.txt','r') as r:
+            file_lst=r.read().split(' ')
+    return file_lst
 # No caching at all for API endpoints.
 @app.after_request
 def add_header(response):
@@ -43,15 +49,31 @@ def refresh():
             # str_date=str(df['Last_Update'][0])[0:10]
             # with open('logs/date.cache','w') as f:
             #     f.write(str_date)
-            file_lst=['']
-            if 'csv_files.txt' in os.listdir(os.getcwd()):
-                with open('csv_files.txt','r') as r:
-                    file_lst=r.read().split(' ')
+            file_lst=get_file_lst()
+            
 
             return render_template('index.html',df_date='You are seeing the COVID19 situation in Pakistan till date: '+file_lst[-2])
     except Exception as e:
         raise e
-        return 'Unknown Error occured: '+str(e)
+        return 'Sorry we cannot proceed '+str(e)
+@app.route('/on_submit', methods=['GET', 'POST'])
+def on_submit():
+    try:
+        if request.method=='POST':
+            email=request.form['email']
+            message=request.form['message']
+            print('Email: ','*******',email,'*******************')
+            print('Message: ','*******',message,'*******************')
+            file_lst=get_file_lst()
+            return render_template('index.html',df_date='You are seeing the COVID19 situation in Pakistan till date: '+file_lst[-2])
+        else:
+            return 'Sorry we cannot proceed '
+    except Exception as e:
+        return 'Sorry we cannot proceed '+str(e)
+    
+    
+
+
 
 if __name__ == '__main__':
     app.run(host="0.0.0.0",port="5000")
