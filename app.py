@@ -69,7 +69,7 @@ def on_submit():
                 server.ehlo()
                 server.starttls()
                 
-                server.login('vickyaiproduction@gmail.com', '25mar2001')
+                server.login('vickyaiproduction@gmail.com', '(password)')
                 server.sendmail('vickyaiproduction@gmail.com', 'waqasbilal02@gmail.com', email+'(email ID)\nMessage: '+message)
                 server.sendmail('vickyaiproduction@gmail.com', email, 'Thank You! for your response we will definately look into this!\nStay Home Stay Safe!')
                 server.close()
